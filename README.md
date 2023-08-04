@@ -36,3 +36,11 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+## Formula one API
+
+https://ergast.com/mrd/
+
+To get the current seasons races https://ergast.com/api/f1/current.json
+
+a copy of the data lives in the lib folder for dev at the moment 'current.json'
