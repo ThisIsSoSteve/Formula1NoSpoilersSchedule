@@ -41,6 +41,26 @@ You can preview the production build with `npm run preview`.
 
 https://ergast.com/mrd/
 
-To get the current seasons races https://ergast.com/api/f1/current.json
+get the current seasons schedule https://ergast.com/api/f1/current.json
+get Qualifying result https://ergast.com/api/f1/2023/6/qualifying.json (https://ergast.com/api/f1/{year}/{round}/qualifying.json)
+get Sprint result https://ergast.com/api/f1/2023/12/sprint.json (https://ergast.com/api/f1/{year}/{round}/sprint.json)
+get Race result https://ergast.com/api/f1/2023/6/results.json (https://ergast.com/api/f1/{year}/{round}/results.json)
 
-a copy of the data lives in the lib folder for dev at the moment 'current.json'
+get Driver Standings http://ergast.com/api/f1/current/driverStandings
+get Constructor Standings http://ergast.com/api/f1/current/constructorStandings
+
+a copy of the data current seasons schedule lives in the lib folder for dev at the moment 'current.json'
+
+there doesn't seem to be a way to get the sprint shootout results (sprint qualifying) and the refer to it as "SecondPractice" 
+
+## caching
+https://stackoverflow.com/questions/64092593/svelte-is-there-a-way-to-cache-the-api-result-in-a-way-that-it-wont-trigger-th
+https://github.com/TanStack/query
+
+
+## Other schedlue sites
+https://www.formula1.com/en/racing/2023.html
+https://www.skysports.com/f1/schedule-results
+
+## Format time
+https://github.com/metonym/svelte-time

@@ -1,12 +1,19 @@
 <script>
-	import item from '$lib/current.json';
-	let data = item.MRData.RaceTable;
+	import Event from '$lib/Event.svelte';
+	import Race from '$lib/Race.svelte';
+	export let data;
 </script>
 
-<h1 class="font-semibold text-4xl">Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1 class="font-semibold text-4xl">Formula 1: The don't spoil me Schedule</h1>
 
-{item.MRData.total}
-{#each data.Races as race, i}
-	<p>{i+1}, {race.raceName}</p>
-{/each}
+<!-- {item.MRData.total} -->
+<p>Season {data.season}</p>
+<div class="flex flex-col gap-4">
+	{#each data.races as race}
+		<Race {...race}>
+			{#each race.events as event}
+				<Event {...event} />
+			{/each}
+		</Race>
+	{/each}
+</div>
