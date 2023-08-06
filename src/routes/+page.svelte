@@ -16,6 +16,7 @@
 		});
 	});
 </script>
+
 <div class="flex justify-between mx-auto w-full sm:w-4/5 md:w-2/4 lg:w-2/5 pb-2 p-2">
 	<div class="font-medium text-2xl">
 		{data.season}
@@ -26,7 +27,9 @@
 </div>
 
 <div class="flex flex-col items-center gap-4">
-	
+	{#if !data.races[0].isNext}
+		<div class="font-medium">Previous Races</div>
+	{/if}
 	{#each data.races as race}
 		<Race {...race} {lang} />
 	{/each}

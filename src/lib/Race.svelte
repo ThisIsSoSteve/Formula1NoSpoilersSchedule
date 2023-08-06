@@ -36,19 +36,22 @@
 	//$: startDateFormatted = formatDate(startDate);
 </script>
 
+{#if isNext}
+	<div id="isNext" class="font-medium">Next Race</div>
+{/if}
+
 <a
-	id={isNext ? 'isNext' : ''}
 	href="#"
-	class=" p-4 rounded-lg flex-none antialiased
+	class="m-4 rounded-lg flex-none antialiased overflow-hidden
 	cursor-pointer outline-none ring-1 hover:ring-2 focus:ring-2
 	shadow hover:shadow-lg focus:shadow-lg
 w-full sm:w-4/5 md:w-2/4 lg:w-2/5
-{isNext ? 'ring-lime-400' : ''}
-{isNext === false && isUpcoming ? 'ring-amber-300' : ''}
-{isNext === false && isUpcoming === false ? 'ring-red-300' : ''}"
+{isNext ? 'ring-lime-300 bg-lime-300' : ''}
+{isNext === false && isUpcoming ? 'ring-amber-300 bg-amber-300' : ''}
+{isNext === false && isUpcoming === false ? 'ring-red-300 bg-red-300' : ''}"
 >
 	<article>
-		<section class="flex justify-between mb-2 leading-none">
+		<section class="flex justify-between mb-2 px-4 pt-4 leading-none">
 			<div class="">
 				<h2 class="font-medium">{name}</h2>
 				<h3 class="opacity-75" role="doc-subtitle">{circuitName}</h3>
@@ -62,8 +65,9 @@ w-full sm:w-4/5 md:w-2/4 lg:w-2/5
 				</div>
 			</div>
 		</section>
-
-		<section class="px-2">
+		<!-- </article>
+	<article> -->
+		<section class="px-2 bg-white">
 			<table class="table-auto w-full">
 				<thead>
 					<th />
@@ -95,3 +99,6 @@ w-full sm:w-4/5 md:w-2/4 lg:w-2/5
 	</div> -->
 	</article>
 </a>
+{#if isNext}
+	<div class="font-medium">Upcoming Races</div>
+{/if}
