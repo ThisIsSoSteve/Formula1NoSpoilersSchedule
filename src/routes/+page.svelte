@@ -1,19 +1,33 @@
 <script>
-	import Event from '$lib/Event.svelte';
 	import Race from '$lib/Race.svelte';
+	import { onMount, beforeUpdate } from 'svelte';
 	export let data;
+
+	let lang = 'en-GB';
+	beforeUpdate(() => {
+		lang = navigator.languages.length > 0 ? navigator.languages[0] : 'en';
+	});
+
+	onMount(() => {
+		const el = document.getElementById('isNext');
+		if (!el) return;
+		el.scrollIntoView({
+			behavior: 'smooth'
+		});
+	});
 </script>
+<div class="flex justify-between mx-auto w-full sm:w-4/5 md:w-2/4 lg:w-2/5 pb-2 p-2">
+	<div class="font-medium text-2xl">
+		{data.season}
+	</div>
+	<div class="opacity-75">
+		{lang}
+	</div>
+</div>
 
-<h1 class="font-semibold text-4xl">Formula 1: The don't spoil me Schedule</h1>
-
-<!-- {item.MRData.total} -->
-<p>Season {data.season}</p>
-<div class="flex flex-col gap-4">
+<div class="flex flex-col items-center gap-4">
+	
 	{#each data.races as race}
-		<Race {...race}>
-			{#each race.events as event}
-				<Event {...event} />
-			{/each}
-		</Race>
+		<Race {...race} {lang} />
 	{/each}
 </div>
