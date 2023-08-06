@@ -1,5 +1,8 @@
 # Formula 1 no spoilers schedule
-displays only the schedule not the race results
+Displays only the schedule not the race results
+
+## Live site
+https://formula1-no-spoilers-schedule-6hdm2sjaw-thisissosteve.vercel.app/
 
 ## create-svelte
 
