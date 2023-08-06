@@ -37,12 +37,12 @@ export function load() {
                 }
             ];
 
-            //Api seems to call Sprint Shootout SecondPractice when theres a Sprint
+            //Api seems to call Sprint Shootout SecondPractice when there's a Sprint
             //need to check early races as there was no Sprint Shootout before and Qualifying determined the sprint starting order
             //so the SecondPractice was Free Practice 2 not a Sprint Shootout... bloody sport
             if (race.Sprint !== undefined) {
 
-                if (Number(current.MRData.RaceTable.season) < 2023) {//in prevoius seasons it was fp2 not a sprint shootout
+                if (Number(current.MRData.RaceTable.season) < 2023) {//in previous seasons it was fp2 not a sprint shootout
                     events.push({
                         name: 'Free Practice 2',
                         shortName: 'FP2',
