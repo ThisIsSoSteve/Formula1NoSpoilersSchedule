@@ -1,5 +1,5 @@
 # Formula 1 no spoilers schedule
-displays the only the schedule not the race results
+displays only the schedule not the race results
 
 ## create-svelte
 
