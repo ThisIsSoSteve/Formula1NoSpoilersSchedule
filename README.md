@@ -1,4 +1,7 @@
-# create-svelte
+# Formula 1 no spoilers schedule
+displays the only the schedule not the race results
+
+## create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
