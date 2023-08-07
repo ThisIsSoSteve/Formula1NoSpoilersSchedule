@@ -54,13 +54,13 @@ w-full sm:w-4/5 md:w-2/4 lg:w-2/5
 		<section class="flex justify-between mb-2 px-4 pt-3 leading-none">
 			<div class="">
 				<h2 class="font-medium">{name}</h2>
-				<h3 class="opacity-75" role="doc-subtitle">{circuitName}</h3>
+				<h3 class="text-zinc-900/75" role="doc-subtitle">{circuitName}</h3>
 			</div>
 			<div>
 				<div class="font-medium">
 					{formatDate(startDate)} - {formatDate(endDate)}
 				</div>
-				<div class="text-center opacity-75">
+				<div class="text-center text-zinc-900/75">
 					Round {round}
 				</div>
 			</div>
@@ -78,8 +78,8 @@ w-full sm:w-4/5 md:w-2/4 lg:w-2/5
 						<tr>
 							<td class="py-2 font-medium">{event.name}</td>
 							<td class="text-right">
-								<span class="text-sm opacity-75">{formatDayDate(event.date)} </span>
-								<span class="opacity-75">-</span>
+								<span class="text-sm text-zinc-900/75">{formatDayDate(event.date)} </span>
+								<span class="text-zinc-900/75">-</span>
 								<span class="font-medium">{formatTime(event.date)}</span>
 							</td>
 						</tr>
