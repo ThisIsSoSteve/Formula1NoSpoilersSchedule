@@ -42,7 +42,7 @@
 
 <a
 	href="#"
-	class="m-4 rounded-lg flex-none antialiased overflow-hidden
+	class="rounded-lg flex-none antialiased overflow-hidden
 	cursor-pointer outline-none ring-1 hover:ring-2 focus:ring-2
 	shadow hover:shadow-lg focus:shadow-lg
 w-full sm:w-4/5 md:w-2/4 lg:w-2/5
@@ -51,7 +51,7 @@ w-full sm:w-4/5 md:w-2/4 lg:w-2/5
 {isNext === false && isUpcoming === false ? 'ring-red-300 bg-red-300' : ''}"
 >
 	<article>
-		<section class="flex justify-between mb-2 px-4 pt-4 leading-none">
+		<section class="flex justify-between mb-2 px-4 pt-3 leading-none">
 			<div class="">
 				<h2 class="font-medium">{name}</h2>
 				<h3 class="opacity-75" role="doc-subtitle">{circuitName}</h3>
@@ -67,7 +67,7 @@ w-full sm:w-4/5 md:w-2/4 lg:w-2/5
 		</section>
 		<!-- </article>
 	<article> -->
-		<section class="px-2 bg-white">
+		<section class="px-6 bg-white">
 			<table class="table-auto w-full">
 				<thead>
 					<th />

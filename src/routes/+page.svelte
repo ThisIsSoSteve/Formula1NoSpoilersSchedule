@@ -12,7 +12,7 @@
 		const el = document.getElementById('isNext');
 		if (!el) return;
 		el.scrollIntoView({
-			behavior: 'smooth'
+			behavior: 'instant'
 		});
 	});
 </script>
@@ -26,9 +26,9 @@
 	</div>
 </div>
 
-<div class="flex flex-col items-center gap-4">
+<div class="flex flex-col items-center gap-4 mx-1">
 	{#if !data.races[0].isNext}
-		<div class="font-medium">Previous Races</div>
+		<div class="font-medium text-left">Previous Races</div>
 	{/if}
 	{#each data.races as race}
 		<Race {...race} {lang} />
