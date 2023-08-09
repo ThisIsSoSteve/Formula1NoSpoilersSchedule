@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type RaceEvent from '$lib/classes/RaceEvent';
-	import { onMount } from 'svelte';
 
 	export let round: number;
 	export let name: string;
@@ -11,7 +10,7 @@
 	export let endDate: Date;
 	export let events: RaceEvent[];
 	export let lang: string;
-
+	
 	function formatDate(date: Date): string {
 		return `${date.toLocaleString(lang, { day: '2-digit', month: 'short' })}`;
 	}
@@ -33,14 +32,24 @@
 		})}`;
 	}
 
-	//$: startDateFormatted = formatDate(startDate);
+	function getId(): string
+	{
+		if(isNext)
+		{
+			return "isNextElement";
+		}
+		if(isNext === false && isUpcoming)
+		{
+			return  "isUpcomingElement";
+		}
+
+		return  "isPreviousElement";
+	};
+
+
 </script>
 
-{#if isNext}
-	<div id="isNext" class="font-medium">Next Race</div>
-{/if}
-
-<a
+<a id={getId()}
 	href="#"
 	class="rounded-lg flex-none antialiased overflow-hidden
 	cursor-pointer outline-none ring-1 hover:ring-2 focus:ring-2
@@ -87,18 +96,5 @@ w-full sm:w-4/5 md:w-2/4 lg:w-2/5
 				</tbody>
 			</table>
 		</section>
-
-		<!-- <div class="text-center">
-		{#if isNext}
-			<p>Next Race</p>
-		{:else if isUpcoming}
-			<p>Upcoming Race</p>
-		{:else}
-			<p>Click to Spoil</p>
-		{/if}
-	</div> -->
 	</article>
 </a>
-{#if isNext}
-	<div class="font-medium">Upcoming Races</div>
-{/if}
