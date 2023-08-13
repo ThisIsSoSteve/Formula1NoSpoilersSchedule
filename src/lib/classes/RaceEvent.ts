@@ -1,4 +1,4 @@
-export default class RaceEvent {
+export default class RaceEvent implements IRaceEvent {
     name: string;
     shortName: string;
     date: Date;
@@ -8,4 +8,11 @@ export default class RaceEvent {
         this.shortName = shortName;
         this.date = new Date(date);
     }
+}
+
+export interface IRaceEvent {
+    name: string;
+    shortName: string;
+    date: Date;
+
 }

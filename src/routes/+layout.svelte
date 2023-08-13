@@ -23,7 +23,7 @@
 
 		let isNextElementRect = el.getBoundingClientRect();
 		nextHeight = isNextElementRect.height;
-		nextPosition = isNextElementRect.top + window.scrollY - nextHeight / 1.7;
+		nextPosition = isNextElementRect.top + window.scrollY - nextHeight / 1.8;
 		
 		window.scrollTo({
 			top: nextPosition,

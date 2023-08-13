@@ -1,14 +1,22 @@
-import current from '$lib/current.json';
+import type { IRace } from '$lib/classes/Race';
+import type { IRaceEvent } from '$lib/classes/RaceEvent';
+import data from '$lib/current.json';
 
-export function load() {
+export async function load() {
 
     const currentDate = new Date;
-    const races = current.MRData.RaceTable.Races;
     let upcomingRace = false
-    //todo: load from api and cache this 
-    return {
-        season: current.MRData.RaceTable.season,
-        races: races.map((race) => {
+
+    //todo: cache
+    // const response = await fetch("https://ergast.com/api/f1/current.json");
+    // const data = await response.json();
+
+    const races = data.MRData.RaceTable.Races;
+    const season = data.MRData.RaceTable.season;
+
+    const schedule = {
+        season: season,
+        races: races.map((race: any): IRace => {
 
             let isNextRace = false;
             //todo: double check that date work correct with timezones etc
@@ -19,7 +27,7 @@ export function load() {
                 isNextRace = true
             }
 
-            const events = [
+            const events: IRaceEvent[] = [
                 {
                     name: 'Free Practice 1',
                     shortName: 'FP1',
@@ -42,7 +50,7 @@ export function load() {
             //so the SecondPractice was Free Practice 2 not a Sprint Shootout... bloody sport
             if (race.Sprint !== undefined) {
 
-                if (Number(current.MRData.RaceTable.season) < 2023) {//in previous seasons it was fp2 not a sprint shootout
+                if (Number(season) < 2023) {//in previous seasons it was fp2 not a sprint shootout
                     events.push({
                         name: 'Free Practice 2',
                         shortName: 'FP2',
@@ -98,4 +106,8 @@ export function load() {
             }
         })
     };
+
+    return {
+        schedule
+    }
 }
