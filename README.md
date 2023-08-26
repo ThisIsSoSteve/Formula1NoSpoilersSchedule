@@ -2,7 +2,7 @@
 Displays only the schedule not the race results
 
 ## Live site
-https://formula1-no-spoilers-schedule-6hdm2sjaw-thisissosteve.vercel.app/
+https://formula1-no-spoilers-schedule.vercel.app/
 
 ## create-svelte
 
@@ -64,7 +64,7 @@ https://stackoverflow.com/questions/64092593/svelte-is-there-a-way-to-cache-the-
 https://github.com/TanStack/query
 
 
-## Other schedlue sites
+## Other schedule sites
 https://www.formula1.com/en/racing/2023.html
 https://www.skysports.com/f1/schedule-results
 
