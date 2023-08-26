@@ -26,10 +26,10 @@
 		nextHeight = isNextElementRect.height;
 		nextPosition = isNextElementRect.top + window.scrollY - nextHeight / 1.8;
 
-		// window.scrollTo({
-		// 	top: nextPosition,
-		// 	behavior: 'instant'
-		// });
+		window.scrollTo({
+			top: nextPosition,
+			behavior: 'instant'
+		});
 	});
 
 	function scrollHandler() {
