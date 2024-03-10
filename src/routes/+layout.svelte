@@ -66,7 +66,7 @@
 		class="flex justify-between mx-auto w-full sm:w-4/5 md:w-2/4 lg:w-2/5 pb-2 p-2
 sticky top-0 bg-white border-solid border-b"
 	>
-		<div class="font-medium text-2xl">2023</div>
+		<div class="font-medium text-2xl">2024</div>
 		<div class="font-medium">
 			{RaceCategory}
 		</div>
